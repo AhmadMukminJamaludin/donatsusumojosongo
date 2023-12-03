@@ -13,9 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [\App\Http\Controllers\LandingPageController::class, 'home']);
+Route::get('/about', [\App\Http\Controllers\LandingPageController::class, 'about']);
+Route::get('/product', [\App\Http\Controllers\LandingPageController::class, 'product']);
+Route::get('/store', [\App\Http\Controllers\LandingPageController::class, 'store']);
 
 Route::middleware([
     'auth:sanctum',
